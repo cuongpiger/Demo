@@ -1,2 +1,3 @@
 name = "ada lovelace"
-print(name.title())
+print(name.title() + 'chuyện gì vậy')
+

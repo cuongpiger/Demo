@@ -3,7 +3,7 @@ import os
 
 class ThreadsSpider(scrapy.Spider):
     name = "threads"
-    folder_path = "results"
+    folder_path = "save_file"
     def start_requests(self):
         os.mkdir(self.folder_path)
         urls = []

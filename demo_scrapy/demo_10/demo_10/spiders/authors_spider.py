@@ -7,7 +7,7 @@ class AuthorSpider(scrapy.Spider):
     start_urls = ['http://quotes.toscrape.com/']
 
     def parse(self, response):
-        author_page_links = response.css('.author + a')
+        author_page_links = response.css('.author + a') # sử dụng như vầy khi 2 tag cùng cấp
         yield from response.follow_all(author_page_links, self.parse_author)
 
         pagination_links = response.css('li.next a')

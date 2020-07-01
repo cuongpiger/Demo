@@ -11,6 +11,30 @@
         list-style: none;
         margin: 10px;
       }
+
+      .sub-level {
+        background: #ccc;
+      }
+
+      a {
+        color: #00c;
+      }
+
+      a.mailto {
+        background: url(images/email.png) no-repeat right top;
+        padding-right: 18px;
+      }
+
+      a.pdflink {
+        background: url(images/pdf.png) no-repeat right top;
+        padding-right: 18px;
+      }
+
+      a.henrylink {
+        background-color: red;
+        padding: 2px;
+        border: 1px solid #000;
+      }
     </style>
   </head>
   <body>
@@ -55,6 +79,10 @@
     <script>
       $(document).ready(function () {
         $("#selected-plays > li").addClass("horizontal");
+        $("#selected-plays li:not(.horizontal)").addClass("sub-level");
+        $('a[href^="mailto:"]').addClass('mailto');
+        $('a[href$=".pdf"]').addClass('pdflink');
+        $('a[href^="http"][href*="henry"]').addClass('henrylink');
       });
     </script>
   </body>

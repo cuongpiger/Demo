@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .horizontal {
+        float: left;
+        list-style: none;
+        margin: 10px;
+      }
+
+      .sub-level {
+        background: #ccc;
+      }
+
+      a {
+        color: #00c;
+      }
+
+      a.mailto {
+        background: url(images/email.png) no-repeat right top;
+        padding-right: 18px;
+      }
+
+      a.pdflink {
+        background: url(images/pdf.png) no-repeat right top;
+        padding-right: 18px;
+      }
+
+      a.henrylink {
+        background-color: red;
+        padding: 2px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="selected-plays">
+      <li>
+        Comedies
+        <ul>
+          <li><a href="/asyoulikeit/">As You Like It</a></li>
+          <li>All's Well That Ends Well</li>
+          <li>A Midsummer Night's Dream</li>
+          <li>Twelfth Night</li>
+        </ul>
+      </li>
+      <li>
+        Tragedies
+        <ul>
+          <li><a href="hamlet.pdf">Hamlet</a></li>
+          <li>Macbeth</li>
+          <li>Romeo and Juliet</li>
+        </ul>
+      </li>
+      <li>
+        Histories
+        <ul>
+          <li>
+            Henry IV (<a href="mailto:henryiv@king.co.uk">email</a>)
+            <ul>
+              <li>Part I</li>
+              <li>Part II</li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="http://www.shakespeare.co.uk/henryv.htm"> Henry V</a>
+          </li>
+          <li>Richard II</li>
+        </ul>
+      </li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#selected-plays > li").addClass("horizontal");
+        $("#selected-plays li:not(.horizontal)").addClass("sub-level");
+        $('a[href^="mailto:"]').addClass('mailto'); //href bắt đầu với 'mailto:'
+        $('a[href$=".pdf"]').addClass('pdflink'); // href kết thúc với '.pdf'
+        $('a[href^="http"][href*="henry"]').addClass('henrylink'); // href bắt đầu với 'http' và có 'henry' xuất hiện ở bất cứ vị trí nào trong href
+      });
+    </script>
+  </body>
+</html>
+
+<!-- để chọn ra phần tử theo index, ở đây chọn ra các thẻ li có class horizontal và chỉ lấy tại index bằng 1 -->
+<!-- $('li.horizontal:eq(1)') -->
+
+<!-- để chọn ra tất cả các thẻ li mà là con đầu tiên của ba má chúng ta sài -->
+<!-- $('li:nth-child(1)') -->
+
+<!-- lưu ý: có sự khác biệt lớn giữa eq(1) và nth-child(1), eq() quy định index bắt đầu từ 0,
+còn nth-child() quy định index bắt đầu từ 1 -->

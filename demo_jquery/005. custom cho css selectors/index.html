@@ -88,10 +88,10 @@
   </body>
 </html>
 
-<!-- để chọn ra phần tử theo index, ở đây chọn ra các thẻ li có class horizontal và chỉ lấy tại index bằng 1 -->
+<!-- để chọn ra phần tử theo index, ở đây chọn ra các thẻ li có class horizontal và chỉ lấy tại index bằng 1 (index là index của mảng trả về)-->
 <!-- $('li.horizontal:eq(1)') -->
 
-<!-- để chọn ra tất cả các thẻ li mà là con đầu tiên của ba má chúng ta sài -->
+<!-- để chọn ra tất cả các thẻ li mà là con đầu tiên của ba má chúng ta sài, index 1 của nth-child(1) là dựa vào cha của nó chứ ko có lấy hết ra rồi bỏ vô mảng đánh index như eq-->
 <!-- $('li:nth-child(1)') -->
 
 <!-- lưu ý: có sự khác biệt lớn giữa eq(1) và nth-child(1), eq() quy định index bắt đầu từ 0,

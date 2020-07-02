@@ -80,9 +80,9 @@
       $(document).ready(function () {
         $("#selected-plays > li").addClass("horizontal");
         $("#selected-plays li:not(.horizontal)").addClass("sub-level");
-        $('a[href^="mailto:"]').addClass('mailto');
-        $('a[href$=".pdf"]').addClass('pdflink');
-        $('a[href^="http"][href*="henry"]').addClass('henrylink');
+        $('a[href^="mailto:"]').addClass('mailto'); //href bắt đầu với 'mailto:'
+        $('a[href$=".pdf"]').addClass('pdflink'); // href kết thúc với '.pdf'
+        $('a[href^="http"][href*="henry"]').addClass('henrylink'); // href bắt đầu với 'http' và có 'henry' xuất hiện ở bất cứ vị trí nào trong href
       });
     </script>
   </body>
